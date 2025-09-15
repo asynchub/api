@@ -1,0 +1,25 @@
+@base_url = http://localhost:8080
+
+###
+
+# @name create_users
+POST {{base_url}}/users
+Content-Type: application/json
+
+{
+    "name": "Pedro",
+    "email": "pedro@email.com"
+}
+
+###
+
+# @name create_event
+POST {{base_url}}/events
+Content-Type: application/json
+
+{
+    "title": "Imersão Dev do Bruno com React e Nodejs.",
+    "description": "Nesse evento vamos criar uma aplicação de planejamento de eventos com React e Nodejs.",
+    "date": "2025-09-20T18:30",
+    "usersId": "cmflr3g9b0000gfmfkdny81wb"
+}
