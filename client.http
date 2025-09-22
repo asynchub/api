@@ -7,8 +7,8 @@ POST {{base_url}}/users
 Content-Type: application/json
 
 {
-    "name": "Pedro",
-    "email": "pedro@email.com"
+    "name": "Bruno",
+    "email": "bruno@email.com"
 }
 
 ###
@@ -18,8 +18,17 @@ POST {{base_url}}/events
 Content-Type: application/json
 
 {
-    "title": "Imersão Dev do Bruno com React e Nodejs.",
-    "description": "Nesse evento vamos criar uma aplicação de planejamento de eventos com React e Nodejs.",
-    "date": "2025-09-20T18:30",
-    "usersId": "cmflr3g9b0000gfmfkdny81wb"
+    "title": "Aniversário do meu filho",
+    "description": "Obrigado por comparecer ao niver",
+    "date": "2025-10-25T17:00",
+    "usersId": "cmfvpgqg40000gfqzcyiyqn2m",
+    "guests": [
+        {"name": "Vanessa", "email": "vanessa@email.com"},
+        {"name": "edu", "email": "edu@email.com"}
+    ]
 }
+
+###
+
+# @name get_events_users
+GET {{base_url}}/events-users/cmfvpgqg40000gfqzcyiyqn2m

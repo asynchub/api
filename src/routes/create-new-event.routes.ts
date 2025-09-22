@@ -7,7 +7,7 @@ import {
 export const createNewEventRoutes = (app: FastifyInstance) => {
   app.post('/events', async (request, reply) => {
     try {
-      const { title, description, date, usersId } =
+      const { title, description, date, usersId, guests } =
         request.body as CreateNewEventRequest
 
       await createNewEvent({
@@ -15,6 +15,7 @@ export const createNewEventRoutes = (app: FastifyInstance) => {
         description,
         date,
         usersId,
+        guests,
       })
 
       return reply.status(201).send({

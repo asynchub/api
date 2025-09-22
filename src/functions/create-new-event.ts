@@ -6,6 +6,11 @@ export interface CreateNewEventRequest {
   description: string
   date: string
   usersId: string
+
+  guests: {
+    name: string
+    email: string
+  }[]
 }
 
 export async function createNewEvent({
@@ -13,8 +18,9 @@ export async function createNewEvent({
   description,
   date,
   usersId,
+  guests,
 }: CreateNewEventRequest) {
-  const dateFormatted = parseISO(date) // formata a date (string) para tipo ISO Date
+  const dateFormatted = parseISO(date)
 
   await prisma.events.create({
     data: {
@@ -22,6 +28,7 @@ export async function createNewEvent({
       description,
       date: dateFormatted,
       usersId,
+      guests,
     },
   })
 }

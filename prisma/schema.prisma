@@ -32,21 +32,8 @@ model Events {
   Users   Users?  @relation(fields: [usersId], references: [id])
   usersId String?
 
-  guests Guests[]
+  guests Json
 
   @@map("events")
 }
 
-// tabela de convidados
-model Guests {
-  id    String @id @default(cuid())
-  name  String
-  email String
-
-  createdAt DateTime @default(now())
-
-  Events   Events? @relation(fields: [eventsId], references: [id])
-  eventsId String?
-
-  @@map("guests")
-}

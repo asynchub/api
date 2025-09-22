@@ -14,17 +14,8 @@ CREATE TABLE "events" (
     "date" DATETIME NOT NULL,
     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "usersId" TEXT,
+    "guests" JSONB NOT NULL,
     CONSTRAINT "events_usersId_fkey" FOREIGN KEY ("usersId") REFERENCES "users" ("id") ON DELETE SET NULL ON UPDATE CASCADE
-);
-
--- CreateTable
-CREATE TABLE "guests" (
-    "id" TEXT NOT NULL PRIMARY KEY,
-    "name" TEXT NOT NULL,
-    "email" TEXT NOT NULL,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "eventsId" TEXT,
-    CONSTRAINT "guests_eventsId_fkey" FOREIGN KEY ("eventsId") REFERENCES "events" ("id") ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 -- CreateIndex
