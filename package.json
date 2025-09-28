@@ -16,6 +16,7 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
+    "@fastify/cors": "^11.1.0",
     "@prisma/client": "6.16.1",
     "@types/node": "^24.5.0",
     "date-fns": "^4.1.0",
